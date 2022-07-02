@@ -1,3 +1,46 @@
+# aek-file-uploader
+This is the official repository for the file uploader. 
+## Acknowledgements
+
+- Alp Emre Elmas
+## Authors
+
+- [Alp Emre Elmas](https://www.github.com/SoulFly579)
+
+
+## Installation
+
+Install aek-file-uploader with composer
+
+```bash
+  composer require 
+```
+
+You need to update your application configuration in order to register the package so it can be loaded by Laravel, just update your config/app.php file adding the following code at the end of your 'providers' section:
+
+```bash
+config/app.php
+
+<?php
+
+return [
+    // ...
+    'providers' => [
+        \AEK\FileUploader\FileUploaderServiceProvider::class,
+        // ...
+    ],
+    // ...
+];
+```
+
+For Laravel, you should publish
+
+```bash 
+    php artisan vendor:publish --provider="AEK\FileUploader\FileUploaderServiceProvider"
+    // or
+    php artisan vendor:publish
+```
+
 
 ## Usage/Examples
 
@@ -45,3 +88,59 @@ Route::post('/', function (\Illuminate\Http\Request $request) {
 });
 ```
 
+
+## Available Methods
+
+```
+Warning: you have to use setKey method before all of the methods.
+```
+Quick way to upload files.
+
+```php
+  $user->setKey("profile_picture")->saveFile($request->profile_picture);
+```
+
+#### setKey("key")
+
+We specify the name of the column that we will upload.
+
+```php
+  $user->setKey("user");
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `key`      | `string` | **Required**. One of the name_of_column parameters which we defined in the model. |
+
+#### deleteFile()
+
+It doesn't take anything as attribute. It deletes file.
+
+#### syncFile($file)
+
+Takes file which you want to upload and delete previous file.
+
+```php
+  $user->syncFile($request->file("profile_picture"));
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `file`      | `file` | **Required**. Delete old file and upload new one |
+
+#### isFileExist()
+
+Checks if file exist in the directory.
+
+```php
+  $user->isFileExist();
+```
+
+
+#### getRealPathOfFile()
+
+Returns storage path of the file;
+
+```php
+  $user->getRealPathOfFile();
+```
