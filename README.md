@@ -1,13 +1,5 @@
 # aek-file-uploader
 This is the official repository for the file uploader. 
-## Acknowledgements
-
-- Alp Emre Elmas
-## Authors
-
-- [Alp Emre Elmas](https://www.github.com/SoulFly579)
-
-
 ## Installation
 
 Install aek-file-uploader with composer
@@ -144,3 +136,12 @@ Returns storage path of the file;
 ```php
   $user->getRealPathOfFile();
 ```
+
+## Authors
+
+- [Alp Emre Elmas](https://www.github.com/SoulFly579)
+
+
+## Acknowledgements
+
+- Alp Emre Elmas
