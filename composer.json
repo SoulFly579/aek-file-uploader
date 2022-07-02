@@ -1,0 +1,26 @@
+{
+    "name": "aek/file-uploader",
+    "description": "This is a library for uploading files in an easy way",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alp Emre Elmas",
+            "email": "soulfly579@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "AEK\\FileUploader\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AEK\\FileUploader\\FileUploaderServiceProvider"
+            ]
+        }
+    }
+}
