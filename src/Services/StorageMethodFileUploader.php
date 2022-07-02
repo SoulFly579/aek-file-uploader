@@ -31,13 +31,11 @@ class StorageMethodFileUploader extends Contracts
             $this->propertyOfKey["destination"],$this->file,$this->propertyOfKey["visibility"]);
     }
 
-    /* Kontrol et gerekli olmayabilir */
     public function getPublicPathOfFile()
     {
         return $this->public_path = Str::replace("public","storage",$this->renamed_file);
     }
 
-    /* Kontrol et gerekli olmayabilir */
     public function getRealPathOfFile($path)
     {
         return $this->real_path = Str::replace("storage","public",$path);
