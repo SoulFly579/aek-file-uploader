@@ -5,7 +5,7 @@ This is the official repository for the file uploader.
 Install aek-file-uploader with composer
 
 ```bash
-  composer require 
+  composer require aek/file-uploader
 ```
 
 You need to update your application configuration in order to register the package so it can be loaded by Laravel, just update your config/app.php file adding the following code at the end of your 'providers' section:
