@@ -53,7 +53,6 @@ class StorageMethodFileUploader extends Contracts
         return Storage::disk($this->disk)->exists($this->getRealPathOfFile($path));
     }
 
-    /*TODO think about using key variable in here instead of path */
     public function deleteFile($path)
     {
         $real_path = $this->getRealPathOfFile($path);
