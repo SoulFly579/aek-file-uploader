@@ -13,8 +13,4 @@ return [
 
     "default" => env("FILE_STORAGE_METHOD","storage"),
 
-    "drivers" => [
-        "storage",
-        "without_storage"
-    ]
 ];
